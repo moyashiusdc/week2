@@ -31,6 +31,13 @@
 - 새로운 배열을 만들어 값을 채워넣으세요
 """
 
+i=(0,-1,0), j(1,0,0), k=(0,0,1)
+matrix=[1,2,3]
+[4,5,6]
+[7,8,9]
+print matrix*(i,j,k)
+
+
 def rotate_matrix_90(matrix):
     """
     2차원 배열을 시계방향으로 90도 회전
@@ -43,9 +50,12 @@ def rotate_matrix_90(matrix):
     """
     n = len(matrix)
     
+    
     # TODO: n x n 크기의 새로운 배열을 생성하세요 (0으로 초기화)
     pass
-        
+        A = random(n,n)
+print(A)
+
     # TODO: 원본 배열의 각 요소를 회전된 위치에 배치하세요
     # 힌트: (i, j) 위치의 요소는 회전 후 (j, n-1-i) 위치로 이동
     pass
