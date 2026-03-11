@@ -9,6 +9,15 @@
 그냥 좌우변환+1을 반복하기만 하면됨
 1부터하면 1 좌우변환 1 -> 21 -> 좌우변환 12 -> 23 -> 231 -> 132 -> 243 -> 3542 -> 35421 -> 12453 -> 23564 -> 235641 
 
-candy = []
-min.candy(n) = 
-min.candy(1) = 1
+# 1. [좌 -> 우] 방향 체크 (정방향)
+for i in range(1, n):
+    if ratings[i] > ratings[i-1]:
+        candies[i] = candies[i-1] + 1
+
+# 2. [우 -> 좌] 방향 체크 (이게 바로 사용자님이 말씀하신 '좌우 변환'!)
+for i in range(n - 2, -1, -1): # 끝에서부터 거꾸로(역순) 내려옵니다.
+    if ratings[i] > ratings[i+1]:
+        # 여기서 '오른쪽 아이보다 높으면 1개 더 주기' 로직이 작동하죠.
+        candies[i] = max(candies[i], candies[i+1] + 1)
+
+  https://gemini.google.com/share/8bf9a4cf534e
